@@ -37,12 +37,12 @@ app.get('/guessme', function (req,res) {
   res.send(object);
 });
 
-// app.post('/guessme', function(req, res){
-//   console.log('check guess me');
-//   //send back data to the client
-//   //array of quotes objects
+app.post('/guessme', function(req, res){
+  console.log('check guess me');
+  //send back data to the client
+  //array of quotes objects
 
-// } );
+} );
 
 
 
