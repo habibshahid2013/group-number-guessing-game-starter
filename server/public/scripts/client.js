@@ -7,20 +7,35 @@ function handleReady() {
 
 }
 
-function addGuesses(){
-  let guessInputs = {
-    hassan: $('#hassanInput').val(),
-    farah: $('#farahInput').val(),
-    garrett: $('#garrettInput').val(),
-    eben: $('#ebenInput').val()
-  }
+function getTargetValue(){
+
 
   $.ajax({
-      method: 'POST',
-      url: '/guessme'
 
+    method: 'GET',
+    url: '/guessme'
   }).then(function(response){
-    console.log('POST /guessme element', response);
-    
+      console.log('test GET /guessme', response);
+
+    let targetValue = $('#headerId')
+      
   })
 }
+
+
+// function addGuesses(){
+//   let guessInputs = {
+//     hassan: $('#hassanInput').val(),
+//     farah: $('#farahInput').val(),
+//     garrett: $('#garrettInput').val(),
+//     eben: $('#ebenInput').val()
+//   }
+
+//   $.ajax({
+//       method: 'POST',
+//       url: '/guessme'
+
+//   }).then(function(response){
+//     console.log('POST /guessme element', response);
+//   })
+// }

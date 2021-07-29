@@ -12,7 +12,7 @@
     [x] Create variable called Random Number.
     [x] Create Random Generator function.
     [x] Set random generator to variable.
-    [] Add GET and POST routes
+    [x] Add GET and POST routes
 
     Client:
     [] create Functions ???

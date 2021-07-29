@@ -25,12 +25,12 @@ function getRandomNumber(min, max){
 // This must be added before GET & POST routes.
 app.use(bodyParser.urlencoded({extended:true}))
 
-// Serve up static files (HTML, CSS, Client JS)
+// Serve up static files (5HTML, CSS, Client JS)
 app.use(express.static('server/public'));
 
 // GET & POST Routes go here
 
-app.get('/randomNumber', function (req,res) {
+app.get('/guessme', function (req,res) {
   console.log('ready to send random number');
   console.log('request . route . path is', req.route.path);
   
