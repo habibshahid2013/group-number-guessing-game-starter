@@ -1,5 +1,6 @@
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+//const { get } = require('jquery');
 const app = express();
 const PORT = 5000;
 
@@ -8,10 +9,16 @@ const PORT = 5000;
 }
 */
 
-//create variable to run RandomNumber Function
-let number = randomNumber(0, 24)
+//create variable to run GetRandomNumber Function
+// const randomNumber = getRandomNumber(0, 24)
+// console.log('test random ', randomNumber);
 
-function randomNumber(min, max){
+let object = {
+
+  randomValue:  Math.round(getRandomNumber(1, 25))
+};
+
+function getRandomNumber(min, max){
  return Math.random() * (max - min) + min;
 };
 
@@ -23,6 +30,19 @@ app.use(express.static('server/public'));
 
 // GET & POST Routes go here
 
+app.get('/randomNumber', function (req,res) {
+  console.log('ready to send random number');
+  console.log('request . route . path is', req.route.path);
+  
+  res.send(object);
+});
+
+// app.post('/guessme', function(req, res){
+//   console.log('check guess me');
+//   //send back data to the client
+//   //array of quotes objects
+
+// } );
 
 
 
