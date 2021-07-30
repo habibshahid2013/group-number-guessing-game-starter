@@ -2,9 +2,8 @@ $(document).ready(handleReady);
 
 function handleReady() {
   console.log("jquery is loaded!")
-
- $('#submitBtn').on('click', addGuesses)
-  getTargetValue();
+ getTargetValue();
+ $('#submitBtn').on('click', addGuesses);
 }
 
 function getTargetValue(){
@@ -17,10 +16,14 @@ function getTargetValue(){
   }).then(function(response){
       console.log('test GET /guessme', response);
 
-    let targetValue = $('#headerId');
-      // targetValue.empty
-      // targetValue.append(`
-      //  <span> ${response.randomValue}</span>`)
+    let targetValue = $('#guesses');
+        $('#guesses').append(`
+          <ul> 
+          <li> ${response.hassan}</li>
+          <li> ${req.body.garrett}</li>
+          <li> ${req.body.eben}</li>
+          <li> ${req.body.farah}</li>
+          </ul>`);
   })
 }
 
@@ -35,15 +38,10 @@ function addGuesses(){
 
   $.ajax({
       method: 'POST',
-      url: '/guessme'
-
+      url: '/guessme',
+      data: guessInputs
   }).then(function(response){
     console.log('POST /guessme element', response);
-    $('#guesses').append(`
-    <li>${guessInputs.hassan}</li>
-    <li>${guessInputs.farah}</li>
-    <li ${guessInputs.garrett}</li>
-    <li>${guessInputs.eben}</li>
-    `)
+   
   })
 }

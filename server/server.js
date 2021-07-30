@@ -13,6 +13,7 @@ const PORT = 5000;
 // const randomNumber = getRandomNumber(0, 24)
 // console.log('test random ', randomNumber);
 
+let guessArray = [];
 let object = {
 
   randomValue:  Math.round(getRandomNumber(1, 25))
@@ -21,6 +22,8 @@ let object = {
 function getRandomNumber(min, max){
  return Math.random() * (max - min) + min;
 };
+
+
 
 // This must be added before GET & POST routes.
 app.use(bodyParser.urlencoded({extended:true}))
@@ -41,6 +44,19 @@ app.post('/guessme', function(req, res){
   console.log('check guess me');
   //send back data to the client
   //array of quotes objects
+  console.log('req.body', req.body); //req.body = guessInputs
+
+  guessArray.push(req.body.hassan);
+  
+    //  $('#guesses').append(`
+    //    <ul> 
+    //    <li> ${req.body.hassan}</li>
+    //    <li> ${req.body.garrett}</li>
+    //    <li> ${req.body.eben}</li>
+    //    <li> ${req.body.farah}</li>
+    //    </ul>`);
+
+  res.send('see this is working 😆');
 
 } );
 
